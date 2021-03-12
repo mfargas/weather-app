@@ -9,15 +9,12 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Weather
-        </a>
+        <h1>Weather App</h1>
       </header>
+      <div>
+        <h2>Daily Weather</h2>
+        <h2>Hourly Weather</h2>
+      </div>
     </div>
   );
 }
