@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import WeatherCard from './components/WeatherCard'
 
 function App() {
   return (
@@ -13,6 +14,10 @@ function App() {
       </header>
       <div>
         <h2>Daily Weather</h2>
+        <WeatherCard />
+        <WeatherCard />
+        <WeatherCard />
+        <WeatherCard />
         <h2>Hourly Weather</h2>
       </div>
     </div>
