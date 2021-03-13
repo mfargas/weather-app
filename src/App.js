@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import WeatherCard from './components/WeatherCard'
 
@@ -6,19 +5,16 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <h1>Weather App</h1>
+        <h2>Four Day Forecast</h2>
+        <div className="four-day-forecast-container">
+          <WeatherCard />
+          <WeatherCard />
+          <WeatherCard />
+          <WeatherCard />
+        </div>
       </header>
-      <div>
-        <h2>Daily Weather</h2>
-        <WeatherCard />
-        <WeatherCard />
-        <WeatherCard />
-        <WeatherCard />
-        <h2>Hourly Weather</h2>
+      <div className="section-2">
+        <p>next section</p>
       </div>
     </div>
   );
