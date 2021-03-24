@@ -28,6 +28,18 @@
   color: #61dafb;
 }
 
+.four-day-forecast-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.section-2{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

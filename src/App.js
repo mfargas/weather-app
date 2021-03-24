@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import WeatherCard from './components/WeatherCard'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Weather
-        </a>
+        <h2>Four Day Forecast</h2>
+        <div className="four-day-forecast-container">
+          <WeatherCard />
+          <WeatherCard />
+          <WeatherCard />
+          <WeatherCard />
+        </div>
       </header>
+      <div className="section-2">
+        <p>next section</p>
+      </div>
     </div>
   );
 }
