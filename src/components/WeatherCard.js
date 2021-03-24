@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import {Card} from 'react-bootstrap';
-
-
 class WeatherCard extends Component{
     render(){
         return(
