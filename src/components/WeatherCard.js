@@ -4,7 +4,7 @@ import {Card} from 'react-bootstrap';
 const WeatherCard = ({ dt, minTemp, maxTemp, main, icon }) => {
     const date = new Date(dt);
 
-    render() {
+    // render() {
         return(
         <div>
         <Card>
@@ -21,6 +21,6 @@ const WeatherCard = ({ dt, minTemp, maxTemp, main, icon }) => {
     </div>
     );
   }
-}
+
 
 export default WeatherCard;
