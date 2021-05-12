@@ -11,7 +11,7 @@ class WeatherCard extends Component{
                     <Card.Text>
                         Caption
                     </Card.Text>
-                <Card.Link href="#">Card Link</Card.Link>
+                <Card.Link href="#">Link</Card.Link>
             </Card.Body>
         </Card>
         </div>
