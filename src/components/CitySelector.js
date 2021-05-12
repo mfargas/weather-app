@@ -6,7 +6,7 @@ const CitySelector = () => {
     const [city, setCity] = useState('');
     const [results, setResults] = useState(null);
     const onSearch= () => {
-        fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${REACT_APP_API_KEY}&units=metric`).then((response) => response.json()).then((results) => setResults(results));
+        fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${process.env.REACT_APP_API_KEY}&units=metric`).then((response) => response.json()).then((results) => setResults(results));
     };
     
     return (
