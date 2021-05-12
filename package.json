@@ -10,7 +10,7 @@
     "react": "^17.0.1",
     "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.1",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^4.0.3",
     "web-vitals": "^1.1.0"
   },
   "scripts": {
@@ -22,9 +22,12 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "@imaginary-cloud/react"
     ]
   },
+  "prettier": "@imaginary-cloud/prettier-config"
+  ,
   "browserslist": {
     "production": [
       ">0.2%",
@@ -41,5 +44,9 @@
   "main": "index.js",
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.26.0",
+    "prettier": "^2.3.0"
+  }
 }

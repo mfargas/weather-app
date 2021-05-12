@@ -12,7 +12,7 @@
 /build
 
 # config file, API tokens here
-/src/APIs/config.js
+/src/apis/config.js
 
 # misc
 .DS_Store
