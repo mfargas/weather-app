@@ -20,7 +20,7 @@ const WeatherCard = ({ dt, minTemp, maxTemp, main, icon }) => {
         </Card>
     </div>
     );
-  }
+}
 
 
 export default WeatherCard;

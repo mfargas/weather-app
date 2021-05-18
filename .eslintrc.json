@@ -1,6 +1,10 @@
 {
+"eslintConfig":{
     "extends": [
+        "react-app",
+        "shared-config",
         "eslint:recommended",
         "plugin:react/recommended"
     ]
+}
 }
