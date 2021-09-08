@@ -1,18 +1,12 @@
 import React, {useState} from 'react';
 import { Row, Col, FormControl, Button } from 'react-bootstrap';
-import { API_KEY, API_BASE_URL } from '../apis/config';
+
 
 const CitySelector = () => {
     const [city, setCity] = useState('');
     const [results, setResults] = useState(null);
     const onSearch= () => {
-        fetch(`${ API_BASE_URL }data/2.5/forecast?q=${ city }&appid=${ API_KEY }&units=metric`).then((response) => response.json()).then((results) => setResults(results));
-    };
-
-    const onKeyDown = (event) => {
-        if (event.keyCode === 13) {
-            onSearch();
-        }
+        fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${process.env.REACT_APP_API_KEY}&units=metric`).then((response) => response.json()).then((results) => setResults(results));
     };
     
     return (
@@ -23,7 +17,7 @@ const CitySelector = () => {
                 </Col>
             </Row>
             <Row>
-                <Col xs={14}>
+                <Col xs={4}>
                     <FormControl 
                         placeholder="Enter your city"
                         onChange={(event)=>setCity(event.target.value)}
@@ -33,7 +27,6 @@ const CitySelector = () => {
             </Row>
             <Row>
                 <Col>
-                    {  }
                     <Button onClick={onSearch}>Check weather forecast</Button>
                 </Col>
             </Row>

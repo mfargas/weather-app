@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Card} from 'react-bootstrap';
 
 const WeatherCard = ({ dt, minTemp, maxTemp, main, icon }) => {

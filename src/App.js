@@ -1,17 +1,12 @@
-import React from 'react';
-import CitySelector from './components/CitySelector';
 import './style/App.css';
 import WeatherCard from './components/WeatherCard';
-import { Container } from 'react-bootstrap';
-import UseFetch from './hooks/UseFetch';
-
+import React from 'react';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <h2>Four Day Forecast</h2>
-        <CitySelector />
         <div className="four-day-forecast-container">
           <WeatherCard 
             dt={3198374 * 1000}
