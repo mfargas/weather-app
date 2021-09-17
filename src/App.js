@@ -1,29 +1,33 @@
-import './style/App.css';
-import WeatherCard from './components/WeatherCard';
 import React from 'react';
+import CitySelector from './components/CitySelector';
+import './style/App.css';
+import { Container } from 'react-bootstrap';
+import UseFetch from './hooks/UseFetch';
+import {API_BASE_URL, API_KEY} from './apis/config';
+import WeatherList from './components/WeatherList';
+
 
 function App() {
+  const { data, error, isLoading, setUrl } = UseFetch();
+
+  console.log(data)
+
+  const getContent = () => {
+    if (error) return <h2>Error when fetching: {error}</h2>
+    if (!data && isLoading) return <h2>LOADING...</h2>
+    if (!data) return null;
+    return <WeatherList weathers={data.list} />
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <h2>Four Day Forecast</h2>
-        <div className="four-day-forecast-container">
-          <WeatherCard 
-            dt={3198374 * 1000}
-            minTemp="22.54"
-            maxTemp="25.30"
-            main="sunny"
-            icon="01d"
-          />
-          <WeatherCard />
-          <WeatherCard />
-          <WeatherCard />
-        </div>
-      </header>
-      <div className="section-2">
+    <Container className="App">
+        <CitySelector onSearch={(city) => setUrl(`${API_BASE_URL}data/2.5/forecast?q=${city}&appid=${API_KEY}`)} />
+        {getContent()}
+        {/* {data && <WeatherList weathers={data.list} />} */}
+      {/* <div className="section-2">
         <p>next section</p>
-      </div>
-    </div>
+      </div> */}
+    </Container>
   );
 }
 
