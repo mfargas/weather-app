@@ -18,15 +18,19 @@ function App() {
     if (!data) return null;
     return <WeatherList weathers={data.list} />
   };
+  const forecastNum = () => {
+      var forecastList = data.list.splice(0,5)
+    
+  }
 
   return (
     <Container className="App">
-        <CitySelector onSearch={(city) => setUrl(`${API_BASE_URL}data/2.5/forecast?q=${city}&appid=${API_KEY}`)} />
+      <CitySelector onSearch={(city) => setUrl(`${API_BASE_URL}data/2.5/forecast?q=${city}&appid=${API_KEY}`)} />
+      <div className="weatherList">
         {getContent()}
         {data && <WeatherList weathers={data.list} />}
-      {/* <div className="section-2">
-        <p>next section</p>
-      </div> */}
+        <p>Forecast provided by openweathermap :)</p>
+      </div>
     </Container>
   );
 }

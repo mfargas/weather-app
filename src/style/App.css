@@ -2,11 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 .row{
   justify-content: center;
   margin: 1rem 0;
@@ -30,19 +25,27 @@
   color: blue;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 .four-day-forecast-container{
   display: flex;
   flex-direction: row;
 }
 
-.section-2{
+.citySelector{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+}
+
+.weatherList{
   min-height: 100vh;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  vertical-align: middle;
 }
 

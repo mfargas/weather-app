@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { Row, Col, FormControl, Button } from 'react-bootstrap';
 import { API_KEY, API_BASE_URL } from '../apis/config';
+import '../style/App.css'
 
 const CitySelector = ({onSearch}) => {
     const [city, setCity] = useState('');
@@ -13,7 +14,7 @@ const CitySelector = ({onSearch}) => {
     };
     
     return (
-        <>
+        <div className="citySelector">
             <Row>
                 <Col>
                     <h2>Enter your city</h2>
@@ -34,7 +35,7 @@ const CitySelector = ({onSearch}) => {
                     <Button onClick={() => onSearch(city)}>Check weather forecast</Button>
                 </Col>
             </Row>
-        </>
+        </div>
     );
 };
 
