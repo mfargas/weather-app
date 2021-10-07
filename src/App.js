@@ -23,7 +23,7 @@ function App() {
     <Container className="App">
         <CitySelector onSearch={(city) => setUrl(`${API_BASE_URL}data/2.5/forecast?q=${city}&appid=${API_KEY}`)} />
         {getContent()}
-        {/* {data && <WeatherList weathers={data.list} />} */}
+        {data && <WeatherList weathers={data.list} />}
       {/* <div className="section-2">
         <p>next section</p>
       </div> */}

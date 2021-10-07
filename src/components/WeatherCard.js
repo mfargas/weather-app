@@ -4,9 +4,7 @@ import {Card} from 'react-bootstrap';
 const WeatherCard = ({ dt, minTemp, maxTemp, main, icon }) => {
     const date = new Date(dt);
 
-    // render() {
         return(
-        // <div>
         <Card >
             <Card.Img variant="top" src={`http://openweathermap.org/img/wn/${icon}@2x.png`} />
             <Card.Body>
@@ -16,8 +14,7 @@ const WeatherCard = ({ dt, minTemp, maxTemp, main, icon }) => {
                     <p>Max: {maxTemp}</p>
             </Card.Body>
         </Card>
-    // </div>
-    );
+    )
 }
 
 

@@ -5,12 +5,6 @@ import { API_KEY, API_BASE_URL } from '../apis/config';
 const CitySelector = ({onSearch}) => {
     const [city, setCity] = useState('');
     const [results, setResults] = useState(null);
-    
-    onSearch = () => {
-        fetch(`${API_BASE_URL}data/2.5/forecast?q=${ city }&appid=${ API_KEY }&units=metric`)
-            .then((response) => response.json())
-            .then((results) => console.log(results));
-    };
 
     const onKeyDown = (event) => {
         if (event.keyCode === 13) {
