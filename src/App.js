@@ -3,7 +3,7 @@ import CitySelector from './components/CitySelector';
 import './style/App.css';
 import { Container } from 'react-bootstrap';
 import UseFetch from './hooks/UseFetch';
-import {API_BASE_URL, API_KEY} from './apis/config';
+import { API_BASE_URL, API_KEY} from './apis/config';
 import WeatherList from './components/WeatherList';
 
 
@@ -16,20 +16,16 @@ function App() {
     if (error) return <h2>Error when fetching: {error}</h2>
     if (!data && isLoading) return <h2>LOADING...</h2>
     if (!data) return null;
-    return <WeatherList weathers={data.list} />
+    return <WeatherList weathers={data.daily} />
   };
-  const forecastNum = () => {
-      var forecastList = data.list.splice(0,5)
-    
-  }
 
   return (
     <Container className="App">
-      <CitySelector onSearch={(city) => setUrl(`${API_BASE_URL}data/2.5/forecast?q=${city}&appid=${API_KEY}`)} />
+      <CitySelector onSearch={(lat, lng) => setUrl(`${API_BASE_URL}data/2.5/onecall?lat=${lat}&lon=${lng}&appid=${API_KEY}`)} ></CitySelector>
       <div className="weatherList">
-        {getContent()}
-        {data && <WeatherList weathers={data.list} />}
-        <p>Forecast provided by openweathermap :)</p>
+        {/* {getContent()} */}
+        {data && <WeatherList weathers={data.daily} />}
+        <p>Forecast provided by openweathermap</p>
       </div>
     </Container>
   );

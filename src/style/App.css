@@ -7,12 +7,6 @@
   margin: 1rem 0;
 }
 
-/* @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-} */
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -39,8 +33,17 @@
   justify-content: center;
 }
 
+.selector-btn{
+  background-color:darkgreen;
+}
+
+.selector-btn:hover{
+  background-color:green;
+}
+
 .weatherList{
   min-height: 100vh;
+  height: max-content;
   margin: auto;
   display: flex;
   flex-direction: column;

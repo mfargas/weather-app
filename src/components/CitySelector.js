@@ -1,17 +1,32 @@
 import React, {useState} from 'react';
+import Geocode from "react-geocode";
 import { Row, Col, FormControl, Button } from 'react-bootstrap';
-import { API_KEY, API_BASE_URL } from '../apis/config';
+import { GOOGLE_API_KEY } from '../apis/config';
 import '../style/App.css'
 
 const CitySelector = ({onSearch}) => {
     const [city, setCity] = useState('');
     const [results, setResults] = useState(null);
+    const [lat, setLat]= useState(0);
+    const [lng, setLng]=useState(0);
 
     const onKeyDown = (event) => {
         if (event.keyCode === 13) {
             onSearch();
         }
     };
+
+    Geocode.fromAddress(city, GOOGLE_API_KEY).then(
+        response => {
+            const { lat, lng } = response.results[0].geometry.location;
+            setLat(lat);
+            setLng(lng);
+            console.log(lat, lng); 
+        },
+        error => {
+            console.error(error);
+        }
+    )
     
     return (
         <div className="citySelector">
@@ -22,9 +37,9 @@ const CitySelector = ({onSearch}) => {
             </Row>
             <Row>
                 <Col xs={14}>
-                    <FormControl 
+                    <FormControl
                         placeholder="Enter your city"
-                        onChange={(event)=>setCity(event.target.value)}
+                        onChange={(event) => setCity(event.target.value)}
                         value={city}
                         onKeyDown={onKeyDown}
                     />
@@ -32,7 +47,7 @@ const CitySelector = ({onSearch}) => {
             </Row>
             <Row>
                 <Col>
-                    <Button onClick={() => onSearch(city)}>Check weather forecast</Button>
+                    <Button onClick={() => onSearch(lat, lng)}>Check weather forecast</Button>
                 </Col>
             </Row>
         </div>
