@@ -13,7 +13,7 @@
 
 # config file, API tokens here
 
-src/apis/config.js
+/src/apis/config.js
 
 # misc
 .DS_Store
