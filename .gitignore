@@ -12,7 +12,6 @@
 /build
 
 # config file, API tokens here
-
 /src/apis/config.js
 
 # misc

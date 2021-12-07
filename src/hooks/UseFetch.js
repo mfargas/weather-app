@@ -1,4 +1,7 @@
 import { useState, useEffect } from 'react';
+// import Geocode from "react-geocode";
+// import { GOOGLE_API_KEY } from '../apis/config';
+
 
 const UseFetch = (initialUrl) => {
     // create state variables
@@ -6,6 +9,8 @@ const UseFetch = (initialUrl) => {
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(null);
     const [url, setUrl] = useState(initialUrl);
+    // const [lat, setLat] = useState(0);
+    // const [lng, setLng] = useState(0);
 
     useEffect(() => {
 
@@ -14,6 +19,18 @@ const UseFetch = (initialUrl) => {
         // clear old search
         setData(null);
         setError(null);
+
+        // Geocode.fromAddress(city, GOOGLE_API_KEY).then(
+        //     response => {
+        //         const { lat, lng } = response.results[0].geometry.location;
+        //         setLat(lat);
+        //         setLng(lng);
+        //         console.log(lat, lng);
+        //     },
+        //     error => {
+        //         console.error(error);
+        //     }
+        // ).then()
 
         fetch(url)
             .then((response) => response.json())
