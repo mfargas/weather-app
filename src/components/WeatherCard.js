@@ -9,9 +9,9 @@ const WeatherCard = ({ dt, max, min, main, icon }) => {
             <Card.Img variant="top" src={`http://openweathermap.org/img/wn/${icon}@2x.png`} />
             <Card.Body>
                 <Card.Title>{main}</Card.Title>
-                    <p>{date.toLocaleDateString()} - {date.toLocaleTimeString()}</p>
-                    <p>Min: {min}</p>
-                    <p>Max: {max}</p>
+                    <p>{date.toLocaleDateString()} - {date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
+                    <p>Min: {min}{'\u00B0'}F</p>
+                    <p>Max: {max}{'\u00B0'}F</p>
             </Card.Body>
         </Card>
     )

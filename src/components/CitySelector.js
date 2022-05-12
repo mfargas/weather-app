@@ -36,7 +36,7 @@ const CitySelector = ({onSearch}) => {
                     />
                     <br/>
                     <FormControl
-                        placeholder="State"
+                        placeholder="Country (Optional)"
                         onChange={(event) => setState(event.target.value)}
                         value={state}
                         onKeyDown={onKeyDown}
@@ -46,6 +46,11 @@ const CitySelector = ({onSearch}) => {
             <Row>
                 <Col>
                     <Button onClick={() => onSearch(city, state)}>Check weather forecast</Button>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    {}
                 </Col>
             </Row>
         </div>

@@ -19,7 +19,7 @@ function App() {
     if (error) return <h2>Error when fetching: {error}</h2>
     if (!data && isLoading) return <h2>LOADING...</h2>
     if (!data) return null;
-    return <WeatherList list={data.list} />
+    return <WeatherList list={data.list} name={data.city.name} />
   };
 
   return (
