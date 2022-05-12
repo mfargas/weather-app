@@ -19,12 +19,12 @@ function App() {
     if (error) return <h2>Error when fetching: {error}</h2>
     if (!data && isLoading) return <h2>LOADING...</h2>
     if (!data) return null;
-    return <WeatherList weathers={data.daily} />
+    return <WeatherList list={data.list} />
   };
 
   return (
     <Container className="App">
-      <CitySelector onSearch={(lat, lng) => setUrl(`${REACT_APP_API_BASE_URL}data/2.5/onecall?lat=${lat}&lon=${lng}&appid=${REACT_APP_API_KEY}&units=metric`)} ></CitySelector>
+      <CitySelector onSearch={(city, state) => setUrl(`${REACT_APP_API_BASE_URL}data/2.5/forecast?q=${city},${state}&appid=${REACT_APP_API_KEY}`)} ></CitySelector>
       <div className="weatherList">
         {getContent()}
         <p>Forecast provided by openweathermap</p>

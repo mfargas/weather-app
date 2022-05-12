@@ -2,14 +2,14 @@ import React from 'react'
 import { Col, Row } from 'react-bootstrap'
 import WeatherCard from './WeatherCard'
 
-const WeatherList = ({weathers}) => {
+const WeatherList = ({list}) => {
     return(
         <Row>
-            {weathers.map(({dt, temp, weather}) => (
+            {list.map(({dt, main, weather}) => (
                 <Col key={dt}>
                     <WeatherCard 
-                        max={temp.max}
-                        min={temp.min}
+                        max={main.temp_max}
+                        min={main.temp_min}
                         dt = {dt * 1000}
                         main = {weather[0].main}
                         icon = {weather[0].icon}

@@ -5,14 +5,18 @@ import '../style/App.css'
 
 const CitySelector = ({onSearch}) => {
     const [city, setCity] = useState('');
+    const [state, setState] = useState('');
     // const [results, setResults] = useState(null);
     // let lat;
     // let lng;
 
     const onKeyDown = (event) => {
         if (event.keyCode === 13) {
-            ToCoords(city).then(onSearch());
+            onSearch()
         }
+
+        console.log(city)
+        console.log(state)
     };
     
     return (
@@ -30,11 +34,18 @@ const CitySelector = ({onSearch}) => {
                         value={city}
                         onKeyDown={onKeyDown}
                     />
+                    <br/>
+                    <FormControl
+                        placeholder="State"
+                        onChange={(event) => setState(event.target.value)}
+                        value={state}
+                        onKeyDown={onKeyDown}
+                    />
                 </Col>
             </Row>
             <Row>
                 <Col>
-                    <Button onClick={() => onSearch()}>Check weather forecast</Button>
+                    <Button onClick={() => onSearch(city, state)}>Check weather forecast</Button>
                 </Col>
             </Row>
         </div>
