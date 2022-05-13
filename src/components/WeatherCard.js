@@ -1,7 +1,7 @@
 import React from 'react';
 import {Card} from 'react-bootstrap';
 
-const WeatherCard = ({ dt, max, min, main, icon }) => {
+const WeatherCard = ({ dt, temp, main, icon }) => {
     const date = new Date(dt);
 
         return(
@@ -10,8 +10,7 @@ const WeatherCard = ({ dt, max, min, main, icon }) => {
             <Card.Body>
                 <Card.Title>{main}</Card.Title>
                     <p>{date.toLocaleDateString()} - {date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
-                    <p>Min: {min}{'\u00B0'}F</p>
-                    <p>Max: {max}{'\u00B0'}F</p>
+                    <p>Temp: {temp}{'\u00B0'}F</p>
             </Card.Body>
         </Card>
     )

@@ -3,7 +3,6 @@ import CitySelector from './components/CitySelector';
 import './style/App.css';
 import { Container } from 'react-bootstrap';
 import UseFetch from './hooks/UseFetch';
-// import { REACT_APP_API_BASE_URL, REACT_APP_API_KEY } from './apis/config';
 import WeatherList from './components/WeatherList';
 
 
@@ -24,7 +23,9 @@ function App() {
 
   return (
     <Container className="App">
-      <CitySelector onSearch={(city, state) => setUrl(`${REACT_APP_API_BASE_URL}data/2.5/forecast?q=${city},${state}&appid=${REACT_APP_API_KEY}`)} ></CitySelector>
+      <CitySelector onSearch={(city, state) => 
+        setUrl(`${REACT_APP_API_BASE_URL}data/2.5/forecast?q=${city},${state}&appid=${REACT_APP_API_KEY}`)} >
+      </CitySelector>
       <div className="weatherList">
         {getContent()}
         <p>Forecast provided by openweathermap</p>

@@ -16,8 +16,7 @@ const WeatherList = ({list, name}) => {
                 {list.map(({ dt, main, weather }) => (
                     <Col key={dt}>
                         <WeatherCard
-                            max={Math.round((main.temp_max - 273)*1.8)+ 32} 
-                            min={Math.round((main.temp_min - 273)*1.8) + 32}
+                            temp={Math.round((main.temp - 273)*1.8)+ 32}
                             dt={dt * 1000}
                             main={weather[0].main}
                             icon={weather[0].icon}

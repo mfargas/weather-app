@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 // import Geocode from "react-geocode";
-// import { REACT_APP_GOOGLE_API_KEY } from '../apis/config';
 
 
 const UseFetch = (initialUrl) => {
@@ -9,8 +8,6 @@ const UseFetch = (initialUrl) => {
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(null);
     const [url, setUrl] = useState(initialUrl);
-    // const [lat, setLat] = useState(0);
-    // const [lng, setLng] = useState(0);
 
     useEffect(() => {
 
