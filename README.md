@@ -39,7 +39,7 @@ followed by
 ```
 
 #### May 2022
-*I updated this and was able to find a free OpenWeatherMap API url that pulls data when you search a city. Initially I was using a url that called for latitude and longitude, for that reason I downloaded React-Geocode to my package.json. I may used that package library in the 
+*I updated this and was able to find a free OpenWeatherMap API url that pulls data when you search a city. Initially I was using a url that called for latitude and longitude, for that reason I downloaded React-Geocode to my package.json. I may use that package library in the 
 future, perhaps to create a GeoLocation button to get the user's precise
 latitude and longitude coordinates for a more personalized search.*
 
